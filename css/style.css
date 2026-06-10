@@ -83,7 +83,7 @@ a {
 }
 
 .hero__image {
-    width: 550px;
+    width: 600px;
     height: 450px;
     background-image: url("https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=500&fit=crop");
     border-radius: 15px;
@@ -206,6 +206,16 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+}
+.products__description{
+    text-align: center;
+    width: 600px;
+    color: #6b7280;
+}
+.products__title{
+    font-size: 35px;
+    font-weight: 900;
 }
 .features{
     width: 100%;
@@ -272,4 +282,30 @@ a {
 }
 .whatsapp-float:hover{
     transform: scale(1.05);
+}
+.footer{
+    margin-top: 60px;
+    background-color: #111827;
+    color: white;
+}
+.footer-flex{
+    padding: 35px 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+.brand-icon-footer{
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.footer-brand{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
