@@ -49,3 +49,9 @@ let divImg =document.getElementsByClassName("product-card__image");
 for(let div of divImg){
     div.style.backgroundImage = `url("/descarga.jpg")`;
 }
+fetch("http://localhost:8081/api/yogurt/findAll")
+.then(res => res.json())
+    .then(data => {
+        let yogurts = data;
+    })
+console.log(typeof yogurts);
