@@ -1,6 +1,9 @@
 "use strict"
 async function cargarYogurts(){
-    let response = await fetch("https://24cb-38-252-237-86.ngrok-free.app/api/yogurt/findAll")
+    let response = await fetch("https://24cb-38-252-237-86.ngrok-free.app/api/yogurt/findAll",{   headers: {
+            "ngrok-skip-browser-warning": "true"
+        }
+    });
 
     let yogurt = await response.json();
 
