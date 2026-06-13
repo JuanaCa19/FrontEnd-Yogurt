@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Inicio Sesión</title>
+</head>
+
+<body>
+
+    <div class="login">
+
+        <div class="login__header">
+            <span class="login__icon">
+                <i class="fas fa-leaf"></i>
+            </span>
+
+            <h1 class="login__title">Delicias Naturales</h1>
+
+            <h4 class="login__subtitle">Panel de Administración</h4>
+
+            <p class="login__description">Ingresa tus credenciales para gestionar tu negocio</p>
+
+        </div>
+
+        <form class="login__form">
+
+            <label class="login__label" for="email">Correo Electronico</label>
+
+            <div class="login__input-group">
+                <i class="fas fa-envelope"></i>
+                <input class="login__input" type="email" id="email" placeholder="nombre@ejemplo.com" required>
+            </div>
+
+            <label class="login__label" for="password">Contraseña</label>
+
+   
+
+                <div class="login__input-group">
+
+                    <i class="fas fa-lock"></i>
+                    <input class="login__input" type="password" id="password" placeholder="********" required>
+                    <i id="togglePass" class="fas fa-eye"></i>
+                </div>
+                    
+                
+
+    
+            <div class="login__error">
+                
+            </div>
+            <button class="login__button">Iniciar Sesión <i class="fas fa-arrow-right"></i></button>
+        </form>
+
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
