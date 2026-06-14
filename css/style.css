@@ -328,13 +328,6 @@ a {
     color: white;
 }
 
-.footer-flex {
-    padding: 35px 0;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-}
-
 .brand-icon-footer {
     width: 40px;
     height: 40px;
@@ -346,10 +339,76 @@ a {
     border-radius: 15px;
 }
 
+.footer-flex {
+    padding: 35px 80px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 50px;
+}
+
 .footer-brand {
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: white;
+}
+
+.footer-links span {
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    border-top: 1px solid #374151;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom-links a {
+    color: #9ca3af;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #374151;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    border-color: #7c3aed;
+    color: #7c3aed;
 }
 
 @media (max-width:880px) {
@@ -403,12 +462,45 @@ a {
     .hero__content {
         align-items: center;
     }
+
+    .footer-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        display: flex;
+        gap: 15px;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+
 }
+
 @media (max-width:400px) {
     .navbar__menu {
-    font-size: 4vw;
+        font-size: 4vw;
+    }
 }
-}
+
 @media (max-width:600px) {
     .whatsapp-float {
         right: 5vw;
@@ -458,23 +550,54 @@ a {
 
     .hero__button {
         padding: 2vw 25vw;
-        
+
         font-size: 3vw;
     }
-    .products__title {
-    font-size: 7vw;
 
-}
-.products__description {
-    width: 85vw;
-    font-size: 4vw;
-}
-.products__grid {
-    width: 90vw;
-    
-}
-.product-card {
-    width: 100%;
-    
-}
+    .products__title {
+        font-size: 7vw;
+
+    }
+
+    .products__description {
+        width: 85vw;
+        font-size: 4vw;
+    }
+
+    .products__grid {
+        width: 90vw;
+
+    }
+
+    .product-card {
+        width: 100%;
+
+    }
+
+    .footer-flex {
+        padding: 25px 15px;
+        gap: 25px;
+    }
+
+    .footer-brand h4 {
+        font-size: 4vw;
+    }
+
+    .footer-brand p {
+        font-size: 3.5vw;
+    }
+
+    .footer-links h5 {
+        font-size: 4vw;
+    }
+
+    .footer-links a,
+    .footer-links span {
+        font-size: 3.5vw;
+    }
+
+    .footer-bottom p,
+    .footer-bottom-links a {
+        font-size: 3vw;
+    }
 }
