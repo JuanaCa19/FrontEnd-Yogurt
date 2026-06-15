@@ -1,6 +1,6 @@
 "use strict"
 async function cargarYogurts(){
-    let response = await fetch("https://24cb-38-252-237-86.ngrok-free.app/api/yogurt/findAll",{   headers: {
+    let response = await fetch("https://b389-38-252-237-86.ngrok-free.app/api/yogurt/findAll",{   headers: {
             "ngrok-skip-browser-warning": "true"
         }
     });
@@ -19,7 +19,7 @@ async function cargarYogurts(){
                 <div class="product-card__image" style="background-image: url('${yogurt[i].imagenUrl}')"></div>
                 <h3  class="product-card__name">${yogurt[i].nombre}</h3>
                 <h3 class="product-card__price">$ ${yogurt[i].precio.toLocaleString("es-Co")}</h3>
-                <p class="product-card__category">${yogurt[i].descripcion}</p>
+                <p class="product-card__category">${yogurt[i].categoria}</p>
                 <a href="https://wa.me/3113669629?text=Hola,%20 quiero%20comprar%20un%20${yogurt[i].nombre}" class="product-card__button" target="_blank><i class="fab fa-whatsapp"></i> Pedir por WhatsApp</a>
             </div>
     `;

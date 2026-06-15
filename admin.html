@@ -1,12 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <title>Panel de Admin</title>
 </head>
+
 <body>
-    
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="" class="navbar__brand">
+                <span class="navbar__icon">
+                    <i class="fas fa-leaf"></i>
+                </span>
+                Delicias Naturales
+            </a>
+        </div>
+        <div class="navbar__user">
+            <p class="navbar__welcome">Hola, <span class="navbar__username">Administrador</span></p>
+            <a href="#" class="navbar__button"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        </div>
+    </nav>
+
+    <main class="admin">
+        <section class="products">
+            <h2 class="products__title">Productos</h2>
+            <button class="btn-add" onclick="abrirPanelProducto()">
+                <i class="fas fa-plus"></i> Nuevo Producto
+            </button>
+        </section>
+        <section class="stats">
+            <div class="stats__card">
+                <p class="stats__label">Total</p>
+                <h3 class="stats__value" id="total-products">12</h3>
+            </div>
+            <div class="stats__card">
+                <p class="stats__label">Activos</p>
+                <h3 class="stats__value" id="active-products">9</h3>
+            </div>
+            <div class="stats__card">
+                <p class="stats__label">Sin Stock</p>
+                <h3 class="stats__value" id="out-of-stock-products">3</h3>
+            </div>
+        </section>
+        <section class="products-table">
+            <div class="products-table__wrapper">
+                <table class="products-table__table">
+                    <thead>
+                        <tr>
+                            <th class="products-table__cell--id">Id</th>
+                            <th>Nombre</th>
+                            <th>Categoria</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-body">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <div class="product-form">
+
+
+
+        <div class="product-form__container">
+
+            <div class="product-form__header">
+                <h3 class="product-form__title">Nuevo Producto</h3>
+                <button class="product-form__close" onclick="ocultarPanelProducto()"><i class="fas fa-times"></i></button>
+            </div>
+
+            <form class="product-form__form">
+
+                <label class="product-form__label" for="nombre">Nombre</label>
+                <input class="product-form__input" type="text" placeholder="Ej: Yogurt de Fresa" id="nombre" required>
+
+                <label class="product-form__label" for="categoria">Categoria</label>
+                <input class="product-form__input" type="text" id="categoria" placeholder="Ej: Frutas" required>
+
+                <div class="product-form__row">
+
+                    <div class="product-form__group">
+
+                        <label class="product-form__label" for="precio">Precio($)</label>
+                        <input class="product-form__input" type="number" id="precio" step="0.01" min="0" placeholder="0"
+                            required>
+
+                    </div>
+
+                    <div class="product-form__group">
+
+                        <label class="product-form__label" for="stock">Stock</label>
+                        <input class="product-form__input" type="number" id="stock" min="0" placeholder="0">
+
+                    </div>
+
+                </div>
+
+                <div class="product-form__row">
+
+                    <div class="product-form__group">
+
+                        <label class="product-form__label" for="estado">Estado</label>
+                        <select class="product-form__select" id="estado" required>
+                            <option selected>Activo</option>
+                            <option>Inactivo</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <label class="product-form__label" for="url">URL de Imagen</label>
+                <input class="product-form__input" type="text" id="url" placeholder="https://">
+
+                <div class="product-form__actions">
+                    <button type="button" class="product-form__button product-form__button--cancel" onclick="ocultarPanelProducto()">Cancelar</button>
+                    <button class="product-form__button product-form__button--save" onclick="">Guardar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
     <script src="js/admin.js"></script>
 </body>
+
 </html>
