@@ -1,6 +1,6 @@
 "use strict"
 async function cargarYogurts(){
-    let response = await fetch("https://b389-38-252-237-86.ngrok-free.app/api/yogurt/findAll",{   headers: {
+    let response = await fetch("https://53b1-38-252-237-81.ngrok-free.app/api/yogurt/findAll",{   headers: {
             "ngrok-skip-browser-warning": "true"
         }
     });
@@ -9,11 +9,13 @@ async function cargarYogurts(){
 
     console.log(yogurt)
 
-
     const divTarjetas = document.getElementById('products__grid');
 
     let html="";
     for (let i = 0; i < yogurt.length; i++) {
+        
+        if(!yogurt[i].activo) continue;
+        
         html += `
             <div class="product-card">
                 <div class="product-card__image" style="background-image: url('${yogurt[i].imagenUrl}')"></div>

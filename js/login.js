@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
 
 async function validarCredenciales(email, password) {
     try {
-        const response = await fetch(`https://b389-38-252-237-86.ngrok-free.app/api/user/validate?email=${email}&password=${password}`, {
+        const response = await fetch(`https://53b1-38-252-237-81.ngrok-free.app/api/user/validate?email=${email}&password=${password}`, {
             method: "Post"
         }
         );
@@ -34,7 +34,7 @@ async function validarCredenciales(email, password) {
         console.log(data);
         if (response.ok) {
             window.location.href = "/admin.html";
-            sessionStorage.setItem("user",data)
+            sessionStorage.setItem("user", data)
         } else {
             divError.innerHTML = "Credenciales Incorrectas";
             divError.style.display = "block";
