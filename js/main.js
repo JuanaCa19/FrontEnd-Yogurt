@@ -1,9 +1,9 @@
 "use strict"
+
+const urlApi = "http://localhost:8081/api";
+
 async function cargarYogurts(){
-    let response = await fetch("https://53b1-38-252-237-81.ngrok-free.app/api/yogurt/findAll",{   headers: {
-            "ngrok-skip-browser-warning": "true"
-        }
-    });
+    let response = await fetch(`${urlApi}/yogurt/findAll`);
 
     let yogurt = await response.json();
 

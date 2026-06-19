@@ -1,7 +1,9 @@
 "use strict"
+const urlApi = "http://localhost:8081/api";
 const form = document.querySelector("form.login__form")
 const divError = document.querySelector("div.login__error");
 const iconTogglePass = document.querySelector("#togglePass");
+
 
 
 iconTogglePass.addEventListener("click", () => {
@@ -26,7 +28,7 @@ form.addEventListener("submit", (e) => {
 
 async function validarCredenciales(email, password) {
     try {
-        const response = await fetch(`https://53b1-38-252-237-81.ngrok-free.app/api/user/validate?email=${email}&password=${password}`, {
+        const response = await fetch(`${urlApi}/user/validate?email=${email}&password=${password}`, {
             method: "Post"
         }
         );

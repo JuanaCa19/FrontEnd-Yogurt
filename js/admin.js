@@ -1,9 +1,11 @@
 "use strict"
 
+const urlApi = "http://localhost:8081/api";
 const form = document.querySelector(".product-form__form");
 const aSalir = document.querySelector(".navbar__button");
 const divPanel = document.querySelector(".product-form");
 const divForm = document.querySelector(".product-form__container");
+const divMensaje = document.querySelector("#mensaje");
 let idYogurtModificar = 0;
 
 class Yogurt {
@@ -34,7 +36,7 @@ aSalir.addEventListener("click", () => {
         sessionStorage.clear();
     }
 });
-
+/*
 window.addEventListener("DOMContentLoaded", () => {
     const item = sessionStorage.getItem("user");
     const user = document.querySelector(".navbar__username");
@@ -46,20 +48,21 @@ window.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("unload", () => {
     sessionStorage.clear();
 })
-
+*/
 async function cargarProductos() {
     try {
-        const response = await fetch("https://53b1-38-252-237-81.ngrok-free.app/api/yogurt/findAll", {
-            headers: {
-                "ngrok-skip-browser-warning": "true"
-            }
-        });
+        const response = await fetch(`${urlApi}/yogurt/findAll`);
         const data = await response.json();
 
         insertarProductos(data);
         cargarStats(data);
     } catch (error) {
-        console.log(error)
+        divMensaje.textContent = "Error de Conexion";
+        divMensaje.classList.add("mensaje","mensaje-error");
+        setTimeout(()=>{
+            divMensaje.classList.remove("mensaje")
+
+        },6500)
     }
 }
 function insertarProductos(yogurts) {
@@ -131,13 +134,16 @@ function ocultarPanelProducto() {
 async function elimnarYogurt(idYogurt) {
     if (confirm("¿Desea Eliminar el Yogurt?")) {
         try {
-            const response = await fetch(`https://53b1-38-252-237-81.ngrok-free.app/api/yogurt/delete/${idYogurt}`, {
-                method: "DELETE",
-                headers: {
-                    "ngrok-skip-browser-warning": "true"
-                }
+            const response = await fetch(`${urlApi}/yogurt/delete/${idYogurt}`, {
+                method: "DELETE"
+                
             })
-            alert("Yogurt Eliminado")
+        divMensaje.textContent = "Yogurt Eliminado";
+        divMensaje.classList.add("mensaje","mensaje-exito");
+        setTimeout(()=>{
+            divMensaje.classList.remove("mensaje")
+
+        },6500)
             cargarProductos();
         } catch (error) {
             console.log(error);
@@ -172,11 +178,10 @@ form.addEventListener("submit", async (e) => {
 })
 
 async function guardarYogurt(yogurt) {
-    const response = await fetch("https://53b1-38-252-237-81.ngrok-free.app/api/yogurt/save", {
+    const response = await fetch(`${urlApi}/yogurt/save`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "ngrok-skip-browser-warning": "true"
         },
         body: JSON.stringify(yogurt)
     });
@@ -184,11 +189,7 @@ async function guardarYogurt(yogurt) {
 
 async function buscarPorId(idYogurt) {
     try {
-        const response = await fetch(`https://53b1-38-252-237-81.ngrok-free.app/api/yogurt/findById/${idYogurt}`, {
-            headers: {
-                "ngrok-skip-browser-warning": "true"
-            }
-        })
+        const response = await fetch(`${urlApi}/yogurt/findById/${idYogurt}`)
         const data = await response.json();
         return data;
     } catch (error) {
