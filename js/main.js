@@ -1,6 +1,6 @@
 "use strict"
 
-const urlApi = "http://localhost:8081/api";
+const urlApi = "https://backend-yogurt.onrender.com/api";
 
 async function cargarYogurts(){
     let response = await fetch(`${urlApi}/yogurt/findAll`);

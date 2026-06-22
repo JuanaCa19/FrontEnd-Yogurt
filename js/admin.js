@@ -1,6 +1,6 @@
 "use strict"
 
-const urlApi = "http://localhost:8081/api";
+const urlApi = "https://backend-yogurt.onrender.com/api";
 const form = document.querySelector(".product-form__form");
 const aSalir = document.querySelector(".navbar__button");
 const divPanel = document.querySelector(".product-form");
@@ -36,7 +36,7 @@ aSalir.addEventListener("click", () => {
         sessionStorage.clear();
     }
 });
-/*
+
 window.addEventListener("DOMContentLoaded", () => {
     const item = sessionStorage.getItem("user");
     const user = document.querySelector(".navbar__username");
@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("unload", () => {
     sessionStorage.clear();
 })
-*/
+
 async function cargarProductos() {
     try {
         const response = await fetch(`${urlApi}/yogurt/findAll`);
